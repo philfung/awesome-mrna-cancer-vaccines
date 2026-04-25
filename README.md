@@ -1,4 +1,4 @@
-# mRNA Cancer Vaccine Clinical Studies
+# 💉 Awesome mRNA Cancer Vaccine Research
 
 [![Contributions](https://img.shields.io/badge/contributions-welcome-blue)](https://github.com/philfung/mrna-cancer-studies/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/philfung/mrna-cancer-studies)]()
