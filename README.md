@@ -4,7 +4,6 @@
 [![Last Commit](https://img.shields.io/github/last-commit/philfung/awesome-mrna-cancer-vaccines)]()
 
 A curated, continuously updated tracker for mRNA cancer vaccine clinical trials and research.  
-Originally started as a personal research log, now shared as an open resource.
 
 | Cancer Type | Last Updated | Vaccine Candidate | Institution / Country | Clinical Phase | Results &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Study Link / Reference |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
