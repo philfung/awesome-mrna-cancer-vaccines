@@ -3,14 +3,31 @@
 [![Contributions](https://img.shields.io/badge/contributions-welcome-blue)](https://github.com/philfung/awesome-mrna-cancer-vaccines/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/philfung/awesome-mrna-cancer-vaccines)]()
 
-A curated, continuously updated tracker for mRNA cancer vaccine clinical trials and research.  
+A curated, continuously updated tracker for mRNA cancer vaccine clinical trials and research.
 
-| Cancer Type | Results &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Last Updated | Vaccine Candidate | Institution / Country | Clinical Phase | Study Link / Reference |
+> [!CAUTION]
+> **Medical Disclaimer**: This repository is for informational and research purposes only. It does not constitute medical advice. Clinical trial data is subject to change, and patients should consult with healthcare professionals regarding treatment options and clinical trial participation.
+
+### 📊 Quick Stats
+- **Cancer Types Tracked**: 7
+- **Most Advanced Stages**: Phase 2/3 (Head & Neck), Phase 2b (Melanoma)
+
+---
+
+| Cancer Type | Results &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Last Updated | Vaccine Candidate | Institution / Developer | Clinical Phase |Study Link |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Breast (TNBC) | **86%** T-cell response; **60%** reduction in risk of recurrence or death. **11/14** patients relapse-free at 6 years. | Feb 18, 2026 | mRNA-4157 | BioNTech | Phase 1 | [Nature](https://www.nature.com/articles/s41586-025-10004-2) |
-| Colorectal | **60%-80%** tumor regression in Phase I trials (48 patients), with **100%** immune activation. | Sept 29, 2025 | EnteroMix | King Edward Medical U (Pakistan) | Phase 1 | [PubMed](https://pmc.ncbi.nlm.nih.gov/articles/PMC12578114/) |
-| Glioblastoma (brain)| In dogs, increased median survival time to **139 days** from 35-63 days.  Only tested on 4 humans, all 4 patients showed rapid increases in immune signaling proteins within 6 hours of infusion. | May 1, 2025 | - | University of Florida | Phase 1 | [PubMed](https://pmc.ncbi.nlm.nih.gov/articles/PMC11767857/) |
-| Head and Neck | Among HPV16-positive HNSCC patients, **40%** Objective Response Rate (ORR) (6 out of 15 patients) in Phase II trial.  FDA Fast Track granted due the promising results. | Jan 22, 2026 | BNT113 | BioNTech | Phase 2/3 | [CancerNetwork](https://www.cancernetwork.com/view/bnt113-granted-fast-track-designation-in-hpv16-positive-hnscc) |
-| Lung (non-small cell) | For BNT116 + Cemiplimab patients, a **80%** Disease Control Rate (DCR) vs 54.8% for normal chemotherapy.  | Nov 5, 2024 | BNT116 | BioNTech | Phase 1 | [Research Gate](https://www.researchgate.net/publication/385580183_1486_Preliminary_results_from_LuCa-MERIT-1_a_phase_I_trial_evaluating_BNT116_a_fixed_antigen_mRNA_vaccine_plus_cemiplimab_in_advanced_non-small_cell_lung_cancer_after_progression_on_PD-1_inhibition) |
-| Melanoma | Among high risk stage 3/4 melanoma patients, **49%** reduction in risk of recurrence or death after 5 years compared to KEYTRUDA alone. | Jan 20, 2026 | mRNA-4157 | Moderna / Merck | Phase 2b | [Merck](https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/) |
-| Pancreatic | **50%** of patients responded to vaccine (8 of 16 patients), **87.5%** survival rate at 6-year follow-up for responders (7 of 8 patients). Induced T-cells remained active for years. | April 19, 2026 | BNT122 | BioNTech | Phase 1 | [Sloan Kettering Cancer Center](https://www.mskcc.org/news/can-mrna-vaccines-fight-pancreatic-cancer-msk-clinical-researchers-are-trying-find-out) |
+| Breast (TNBC) | **86%** measurable T-cell response; **10/14** patients relapse-free at 5 years. | Feb 18, 2026 | - | BioNTech | 🧪 Phase 1 | [Nature](https://www.nature.com/articles/s41586-025-10004-2) / [NCT02316457](https://clinicaltrials.gov/study/NCT02316457) |
+| Colorectal | **60–80%** tumor regression in Phase 1 trials (48 patients), with **100%** immune activation. | Sept 29, 2025 | EnteroMix | Russian Federal Medical and Biological Agency (FMBA) | 🧪 Phase 1 | [PubMed](https://pmc.ncbi.nlm.nih.gov/articles/PMC12578114/) |
+| Glioblastoma (Brain) | In dogs, median survival time increased to **139 days** from 35–63 days. In 3 human patients, all showed rapid increases in immune signaling proteins within 6 hours of infusion. | May 1, 2025 | — | University of Florida | 🧪 Phase 1 | [PubMed](https://pmc.ncbi.nlm.nih.gov/articles/PMC11767857/) / [NCT04573140](https://clinicaltrials.gov/study/NCT04573140) |
+| Head & Neck | Among HPV16-positive HNSCC patients, **40%** Objective Response Rate (ORR) (6 of 15 patients) in a Phase 2 trial. FDA Fast Track designation granted based on promising results. | Jan 22, 2026 | BNT113 | BioNTech | 🧪🧪 Phase 2/3 | [CancerNetwork](https://www.cancernetwork.com/view/bnt113-granted-fast-track-designation-in-hpv16-positive-hnscc) / [NCT04534205](https://clinicaltrials.gov/study/NCT04534205) |
+| Lung (NSCLC) | For BNT116 + Cemiplimab patients, **80%** Disease Control Rate (DCR) vs. 54.8% for standard chemotherapy. | Nov 5, 2024 | BNT116 | BioNTech | 🧪 Phase 1 | [ResearchGate](https://www.researchgate.net/publication/385580183_1486_Preliminary_results_from_LuCa-MERIT-1_a_phase_I_trial_evaluating_BNT116_a_fixed_antigen_mRNA_vaccine_plus_cemiplimab_in_advanced_non-small_cell_lung_cancer_after_progression_on_PD-1_inhibition) / [NCT05142189](https://clinicaltrials.gov/study/NCT05142189)|
+| Melanoma | Among high-risk Stage 3/4 melanoma patients, **49%** reduction in risk of recurrence or death after 5 years compared to KEYTRUDA alone. | Jan 20, 2026 | mRNA-4157 | Moderna / Merck | 🧪🧪 Phase 2b | [Merck](https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/) / [NCT03897881](https://clinicaltrials.gov/study/NCT03897881) |
+| Pancreatic | **50%** of patients responded to vaccine (8 of 16 patients); **87.5%** survival rate at 6-year follow-up among responders (7 of 8 patients). In contrast, among non-responders, only 25% were alive at followup.  | April 19, 2026 | BNT122 | Memorial Sloan Kettering Cancer Center, in partnership with BioNTech | 🧪 Phase 1 | [Memorial Sloan Kettering](https://www.mskcc.org/news/can-mrna-vaccines-fight-pancreatic-cancer-msk-clinical-researchers-are-trying-find-out) / [NCT03815058](https://clinicaltrials.gov/study/NCT03815058) |
+
+---
+
+### 🤝 Contributing
+Contributions are welcome! If you have updates on clinical trial results, new candidates, or corrected data:
+1. **Open an Issue** or **Submit a Pull Request**.
+2. Please provide a reliable source (PubMed, Nature, ClinicalTrials.gov, or institutional press releases).
+3. Ensure formatting remains consistent with the existing table.
