@@ -31,3 +31,6 @@ Contributions are welcome! If you have updates on clinical trial results, new ca
 1. **Open an Issue** or **Submit a Pull Request**.
 2. Please provide a reliable source (PubMed, Nature, ClinicalTrials.gov, or institutional press releases).
 3. Ensure formatting remains consistent with the existing table.
+
+## Related Repos
+* [💉 Open-mRNA: A guide to producing a personalized mRNA cancer vaccine](https://github.com/philfung/open-mrna)
