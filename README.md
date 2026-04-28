@@ -14,7 +14,7 @@ A curated, continuously updated tracker for mRNA cancer vaccine clinical trials 
 
 ---
 
-| Cancer Type | Results &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Last Updated | Vaccine Candidate | Personalized? | Institution / Developer | Clinical Phase |Study Link |
+| Cancer Type | Results &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Updated| Vaccine Candidate| Personalized?|Institution| Clinical Phase|Reference|
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Breast (TNBC) | **86%** measurable T-cell response; **10/14** patients relapse-free at 5 years. | Feb 18, 2026 | - | Yes | BioNTech | 🧪 Phase 1 | [Nature](https://www.nature.com/articles/s41586-025-10004-2) / [NCT02316457](https://clinicaltrials.gov/study/NCT02316457) |
 | Colorectal | **60–80%** tumor regression in Phase 1 trials (48 patients), with **100%** immune activation. | Sept 29, 2025 | EnteroMix | Yes | Russian Federal Medical and Biological Agency (FMBA) | 🧪 Phase 1 | [PubMed](https://pmc.ncbi.nlm.nih.gov/articles/PMC12578114/) |
