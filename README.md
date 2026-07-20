@@ -8,7 +8,7 @@ A curated, continuously updated tracker for mRNA cancer vaccine clinical trials 
 > [!CAUTION]
 > **Medical Disclaimer**: This repository is for informational and research purposes only. It does not constitute medical advice. Clinical trial data is subject to change, and patients should consult with healthcare professionals regarding treatment options and clinical trial participation.
 
-### 📊 Quick Stats
+### 📊 Data
 - **Cancer Types Tracked**: 7
 - **Most Advanced Stages**: Phase 3 (Melanoma, Head & Neck)
 
@@ -26,11 +26,8 @@ A curated, continuously updated tracker for mRNA cancer vaccine clinical trials 
 
 ---
 
-### 🤝 Contributing
-Contributions are welcome! If you have updates on clinical trial results, new candidates, or corrected data:
-1. **Open an Issue** or **Submit a Pull Request**.
-2. Please provide a reliable source (PubMed, Nature, ClinicalTrials.gov, or institutional press releases).
-3. Ensure formatting remains consistent with the existing table.
+### Contributing
+Contributions are welcome!
 
 ### Related
 * [💉 Open-mRNA: A guide to producing a personalized mRNA cancer vaccine](https://github.com/philfung/open-mrna)
