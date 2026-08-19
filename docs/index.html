@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Awesome mRNA Cancer Vaccine Research — Tracker</title>
+<meta name="description" content="A curated tracker for mRNA cancer vaccine clinical trials — phases, results, and references across 7 cancer types.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#13151a;
+    --ink-2:#2a2e36;
+    --muted:#6b7280;
+    --muted-2:#9aa0ab;
+    --line:#e8e6e1;
+    --line-2:#f1efe9;
+    --paper:#ffffff;
+    --paper-2:#fbfaf8;
+    --teal:#0e7a6b;
+    --teal-2:#e6f3f0;
+    --rust:#b5452a;
+    --rust-2:#fdf0ec;
+    --amber:#8a6a00;
+    --amber-2:#fef6d8;
+    --stone:#57534e;
+    --max:1160px;
+    --radius:10px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal); text-underline-offset:3px}
+  a:hover{color:#0b5f53}
+  /* top rule */
+  .topline{height:3px; background:var(--ink); }
+  /* header */
+  .site-header{
+    border-bottom:1px solid var(--line);
+    background:var(--paper);
+    position:sticky; top:0; z-index:20;
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:24px; padding:14px 0;
+  }
+  .brand{display:flex; align-items:center; gap:14px; min-width:0}
+  .mark{
+    width:36px; height:36px; flex:0 0 36px;
+    background:var(--ink); color:#fff;
+    display:grid; place-items:center;
+    font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:13px; letter-spacing:.06em;
+  }
+  .brand h1{
+    margin:0; font-family:"Newsreader", Georgia, serif; font-weight:600; font-size:19px; line-height:1.1; letter-spacing:-.02em;
+  }
+  .brand p{margin:2px 0 0; font-size:12.5px; color:var(--muted); line-height:1.3}
+  .header-actions{display:flex; align-items:center; gap:10px; flex-shrink:0}
+  .meta-pill{
+    font-family:"IBM Plex Mono", monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted); border:1px solid var(--line); padding:7px 10px; background:var(--paper-2);
+    white-space:nowrap;
+  }
+  .btn{
+    appearance:none; border:1px solid var(--ink); background:var(--ink); color:#fff;
+    font-family:"IBM Plex Sans", sans-serif; font-size:13px; font-weight:500; padding:8px 14px;
+    cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{background:#1f232b; color:#fff}
+  .btn-ghost{background:var(--paper); color:var(--ink); border-color:var(--line)}
+  .btn-ghost:hover{background:var(--paper-2)}
+  /* hero */
+  .hero{border-bottom:1px solid var(--line); background:var(--paper-2)}
+  .hero-grid{
+    display:grid; grid-template-columns: 1.35fr .85fr; gap:0;
+    align-items:stretch;
+  }
+  .hero-main{padding:22px 32px 22px 0; border-right:1px solid var(--line); display:flex; flex-direction:column; justify-content:center}
+  .hero h2{
+    font-family:"Newsreader", Georgia, serif; font-weight:500; font-size:36px; line-height:1.02; letter-spacing:-.03em;
+    margin:0 0 10px; max-width:18ch;
+  }
+  .hero h2 em{font-style:italic; font-weight:400; color:var(--stone)}
+  .hero .lede{
+    font-size:14.5px; line-height:1.5; color:var(--ink-2); max-width:52ch; margin:0 0 14px;
+  }
+  .disclaimer{
+    border-left:2px solid var(--rust); padding:6px 10px; background:var(--rust-2);
+    font-size:12px; line-height:1.45; color:#5a2a1f; max-width:58ch;
+  }
+  .disclaimer strong{font-weight:600}
+  .hero-side{padding:20px 0 20px 28px; display:flex; flex-direction:column; justify-content:center; gap:8px}
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+  .stat{border:1px solid var(--line); background:var(--paper); padding:8px 10px}
+  .stat-label{font-family:"IBM Plex Mono", monospace; font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 2px}
+  .stat-value{font-family:"Newsreader", Georgia, serif; font-size:22px; line-height:1; letter-spacing:-.02em; margin:0}
+  .stat-note{font-size:11px; color:var(--muted); margin:2px 0 0; line-height:1.25}
+  .legend{border:1px solid var(--line); background:var(--paper); padding:8px 10px}
+  .legend h3{margin:0 0 5px; font-family:"IBM Plex Mono", monospace; font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+  .legend-row{display:flex; flex-wrap:wrap; gap:5px}
+  .phase-dot{
+    display:inline-flex; align-items:center; gap:6px; font-size:11px;
+    font-family:"IBM Plex Mono", monospace; letter-spacing:.05em; text-transform:uppercase;
+    border:1px solid var(--line); padding:4px 7px; background:var(--paper-2);
+    color:var(--ink-2); line-height:1; white-space:nowrap;
+  }
+  .phase-dot i{width:7px; height:7px; border-radius:50%; display:inline-block; flex-shrink:0}
+  .phase-dot.phase1, .badge.phase1{background:#fef2f2; border-color:#fecaca; color:#991b1b}
+  .phase-dot.phase1 i, .badge.phase1 i{background:#dc2626}
+  .phase-dot.phase2, .badge.phase2{background:#fefce8; border-color:#fef08a; color:#854d0e}
+  .phase-dot.phase2 i, .badge.phase2 i{background:#ca8a04}
+  .phase-dot.phase3, .badge.phase3{background:#fff7ed; border-color:#fed7aa; color:#9a3412}
+  .phase-dot.phase3 i, .badge.phase3 i{background:#ea580c}
+  .phase-dot.approved, .badge.approved{background:#dcfce7; border-color:#86efac; color:#14532d}
+  .phase-dot.approved i, .badge.approved i{background:#16a34a}
+  /* layout */
+  .layout{
+    display:grid; grid-template-columns: 260px 1fr; gap:0;
+    max-width:var(--max); margin:0 auto; padding:0 24px;
+    border-left:1px solid var(--line); border-right:1px solid var(--line);
+  }
+  .sidebar{
+    border-right:1px solid var(--line); padding:20px 20px 24px 0; position:sticky; top:65px; align-self:start; max-height:calc(100vh - 65px); overflow:auto;
+  }
+  .sidebar h3{font-family:"IBM Plex Mono", monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:18px 0 10px}
+  .sidebar h3:first-child{margin-top:0}
+  .field{margin-bottom:14px}
+  .field label{font-size:12px; font-weight:600; color:var(--ink-2); display:block; margin-bottom:6px}
+  .input, .select{
+    width:100%; border:1px solid var(--line); background:var(--paper); padding:9px 10px; font-size:13.5px; font-family:"IBM Plex Sans", sans-serif;
+  }
+  .input:focus, .select:focus{outline:1px solid var(--ink); border-color:var(--ink)}
+  .input{font-family:"IBM Plex Mono", monospace; font-size:13px}
+  .checkgroup{display:flex; flex-direction:column; gap:7px}
+  .check{font-size:13px; display:flex; align-items:center; gap:8px; cursor:pointer}
+  .check input{accent-color:var(--teal)}
+  .sidebar-foot{margin-top:18px; padding-top:16px; border-top:1px solid var(--line); font-size:12px; color:var(--muted); line-height:1.5}
+  .content{padding:20px 0 0 28px; min-width:0}
+  .toolbar{
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+    padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:14px;
+  }
+  .toolbar-left{font-family:"IBM Plex Mono", monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+  .toolbar-right{display:flex; gap:8px; align-items:center}
+  /* trials */
+  .trials{display:flex; flex-direction:column; gap:14px}
+  .trial{
+    border:1px solid var(--line); background:var(--paper);
+    display:grid; grid-template-columns: 1fr 220px;
+  }
+  .trial-main{padding:18px 18px 16px; min-width:0}
+  .trial-head{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px}
+  .cancer{
+    font-family:"Newsreader", Georgia, serif; font-size:20px; font-weight:600; letter-spacing:-.02em; line-height:1;
+    margin:0; display:inline-flex; align-items:center; gap:10px;
+  }
+  .cancer small{font-family:"IBM Plex Mono", monospace; font-size:11px; font-weight:400; letter-spacing:.02em; color:var(--muted); text-transform:none}
+  .badges{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+  .badge{
+    font-family:"IBM Plex Mono", monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    padding:4px 7px; border:1px solid var(--line); background:var(--paper-2); color:var(--ink-2); white-space:nowrap;
+  }
+  .badge.personalized-yes{background:#f0fdfa; border-color:#99d5cc; color:#0b5f53}
+  .badge.personalized-no{background:#fafaf9; color:var(--muted)}
+  .result{
+    font-size:14px; line-height:1.55; color:var(--ink-2); margin:0 0 12px; max-width:70ch;
+  }
+  .result strong{color:var(--ink); font-weight:600}
+  .result .hl{background: #fff3c4; padding:0 2px; font-weight:600}
+  .meta-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap:10px 18px;
+    border-top:1px solid var(--line-2); padding-top:12px; margin-top:12px;
+  }
+  .meta-item dt{font-family:"IBM Plex Mono", monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); margin:0 0 3px}
+  .meta-item dd{margin:0; font-size:13px; line-height:1.4; color:var(--ink-2)}
+  .meta-item dd a{word-break:break-all}
+  .links{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px}
+  .link-pill{
+    font-size:12px; border:1px solid var(--line); padding:5px 8px; background:var(--paper-2); text-decoration:none; color:var(--ink-2);
+  }
+  .link-pill:hover{background:var(--paper); border-color:var(--muted-2)}
+  .trial-aside{
+    border-left:1px solid var(--line); background:var(--paper-2); padding:16px 14px; display:flex; flex-direction:column; gap:12px;
+  }
+  .aside-label{font-family:"IBM Plex Mono", monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); margin:0}
+  .aside-value{font-size:13px; line-height:1.45}
+  .mini-table{width:100%; border-collapse:collapse; font-size:12.5px}
+  .mini-table th{font-family:"IBM Plex Mono", monospace; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); text-align:left; padding:4px 0; font-weight:500}
+  .mini-table td{padding:4px 0; border-top:1px solid var(--line-2)}
+
+  /* empty */
+  .empty{border:1px dashed var(--line); padding:24px; text-align:center; color:var(--muted); font-size:13px}
+  /* footer */
+  .page-footer{border-top:1px solid var(--line); background:var(--paper-2); margin-top:28px; padding:28px 0}
+  .footer-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px}
+  .footer-grid h3{font-family:"Newsreader", Georgia, serif; font-size:18px; font-weight:600; letter-spacing:-.02em; margin:0 0 8px}
+  .footer-grid p, .footer-grid li{font-size:13px; line-height:1.6; color:var(--ink-2)}
+  .footer-grid ul{margin:0; padding-left:18px}
+  .subtle{font-family:"IBM Plex Mono", monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+  /* responsive */
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-main{border-right:0; border-bottom:1px solid var(--line); padding-right:0}
+    .hero-side{padding-left:0}
+    .layout{grid-template-columns:1fr; border-left:0; border-right:0}
+    .sidebar{position:static; max-height:none; border-right:0; border-bottom:1px solid var(--line); padding-right:0}
+    .content{padding-left:0}
+    .trial{grid-template-columns:1fr}
+    .trial-aside{border-left:0; border-top:1px solid var(--line); flex-direction:row; flex-wrap:wrap}
+    .trial-aside > div{flex:1 1 160px}
+    .header-inner{flex-wrap:wrap}
+  }
+  @media (max-width: 560px){
+    .wrap{padding:0 16px}
+    .layout{padding:0 16px}
+    .hero h2{font-size:32px}
+    .stat-grid{grid-template-columns:1fr 1fr}
+    .header-actions{width:100%}
+    .meta-pill{display:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<div class="topline" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">mRNA</div>
+      <div>
+        <h1>Awesome mRNA Cancer Vaccine Research</h1>
+        <p>Curated clinical trials &amp; research tracker</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <span class="meta-pill">Updated Aug 2026 · 7 trials tracked</span>
+      <a class="btn" href="https://github.com/philfung/awesome-mrna-cancer-vaccines" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+      <h2>Where mRNA <em>cancer vaccines</em> stand.</h2>
+      <p class="lede">A curated tracker of clinical trial results, phases, and primary references across cancer types.</p>
+      <div class="disclaimer" role="note">
+        <strong>Medical disclaimer:</strong> For informational and research purposes only. Not medical advice.
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="stat-grid">
+        <div class="stat">
+          <p class="stat-label">Cancer types</p>
+          <p class="stat-value">7</p>
+          <p class="stat-note">From TNBC to pancreatic</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">Approved</p>
+          <p class="stat-value">1</p>
+          <p class="stat-note">Oncorna (Russia, Apr 2026)</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">Most advanced</p>
+          <p class="stat-value">Phase 3</p>
+          <p class="stat-note">Melanoma &amp; Head &amp; Neck</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">Personalized</p>
+          <p class="stat-value">4 / 7</p>
+          <p class="stat-note">Patient-specific neoantigen vaccines</p>
+        </div>
+      </div>
+      <div class="legend">
+        <h3>Phase key</h3>
+        <div class="legend-row">
+          <span class="phase-dot phase1"><i></i> Phase 1</span>
+          <span class="phase-dot phase2"><i></i> Phase 2</span>
+          <span class="phase-dot phase3"><i></i> Phase 3 / 2b</span>
+          <span class="phase-dot approved"><i></i> Approved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="layout" id="trials">
+  <aside class="sidebar" aria-label="Filters">
+    <h3>Search</h3>
+    <div class="field">
+      <label for="q" class="subtle" style="display:none">Search</label>
+      <input id="q" class="input" placeholder="Search cancer, vaccine, institution…" autocomplete="off">
+    </div>
+
+    <h3>Filter by phase</h3>
+    <div class="checkgroup" id="phase-filters">
+      <label class="check"><input type="checkbox" value="Phase 1" checked> Phase 1</label>
+      <label class="check"><input type="checkbox" value="Phase 2" checked> Phase 2 / 2b</label>
+      <label class="check"><input type="checkbox" value="Phase 3" checked> Phase 3</label>
+      <label class="check"><input type="checkbox" value="Approved" checked> Approved</label>
+    </div>
+
+    <h3>Personalization</h3>
+    <div class="checkgroup" id="pers-filters">
+      <label class="check"><input type="checkbox" id="pers-only" value="Yes"> Personalized only</label>
+    </div>
+
+    <h3>Sort</h3>
+    <div class="field">
+      <select id="sort" class="select">
+        <option value="phase-desc">Phase: advanced → early</option>
+        <option value="updated-desc">Last updated: newest first</option>
+        <option value="updated-asc">Last updated: oldest first</option>
+        <option value="alpha">Cancer type A → Z</option>
+      </select>
+    </div>
+
+    <div class="sidebar-foot">
+      <div style="margin-bottom:8px"><span class="subtle">Contributing</span></div>
+      Open an issue or PR with a reliable source (PubMed, Nature, ClinicalTrials.gov, or institutional releases). Keep table formatting consistent.<br><br>
+      <a href="https://github.com/philfung/awesome-mrna-cancer-vaccines/graphs/contributors" target="_blank" rel="noopener">Contributors</a> · <a href="https://github.com/philfung/awesome-mrna-cancer-vaccines" target="_blank" rel="noopener">Repository</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="toolbar">
+      <div class="toolbar-left"><span id="count">7</span> trials · <span id="count-note">all phases</span></div>
+      <div class="toolbar-right">
+        <button id="clear" class="btn btn-ghost" style="padding:7px 11px; font-size:12px">Clear filters</button>
+      </div>
+    </div>
+    <div id="list" class="trials"></div>
+  </main>
+</div>
+
+<footer class="page-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h3>About this tracker</h3>
+      <p>Curated from peer-reviewed articles, ClinicalTrials.gov entries, and institutional announcements. Every entry links to its primary reference — verify details there before citing.</p>
+      <p class="subtle" style="margin-top:10px">Last built from README data — August 2026 updates included. Data subject to change.</p>
+    </div>
+    <div>
+      <h3>Related</h3>
+      <ul>
+        <li><a href="https://github.com/philfung/awesome-mrna-cancer-vaccines" target="_blank" rel="noopener">Source repository &amp; contribution guide</a></li>
+      </ul>
+      <p style="margin-top:12px; font-size:12px; color:var(--muted)">Built as a static GitHub Pages site. No tracking, no cookies. Styles and filtering run entirely in the browser.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const TRIALS = [
+  {
+    cancer: "Breast (TNBC)",
+    cancerNote: "Triple-negative",
+    updated: "2026-03-13",
+    updatedLabel: "Mar 13, 2026",
+    vaccine: "—",
+    personalized: "Yes",
+    institution: "BioNTech",
+    phase: "Phase 1",
+    phaseClass: "phase1",
+    result: "86% measurable T-cell response; 10/14 patients relapse-free at 5 years.",
+    detail: "Individualized neoantigen vaccine (IVAC MUTANOME) in early TNBC. Long-term follow-up reported in Nature.",
+    refs: [
+      {label:"Nature", href:"https://www.nature.com/articles/s41586-025-10004-2"},
+      {label:"NCT02316457", href:"https://clinicaltrials.gov/study/NCT02316457"}
+    ]
+  },
+  {
+    cancer: "Colorectal",
+    cancerNote: "48 patients",
+    updated: "2026-04-01",
+    updatedLabel: "Apr 2026",
+    vaccine: "Oncorna",
+    personalized: "Yes",
+    institution: "Russian Federal Medical and Biological Agency (FMBA)",
+    phase: "Approved",
+    phaseClass: "approved",
+    result: "Approved for clinical use in Russia (April 2026) after Phase 1: 60–80% tumor regression and 100% immune activation.",
+    detail: "Regulatory approval followed Phase 1 trials; reported via national agency announcement.",
+    refs: [
+      {label:"PubMed / PMC12578114", href:"https://pmc.ncbi.nlm.nih.gov/articles/PMC12578114/"}
+    ]
+  },
+  {
+    cancer: "Glioblastoma",
+    cancerNote: "Brain",
+    updated: "2026-06-25",
+    updatedLabel: "Jun 25, 2026",
+    vaccine: "—",
+    personalized: "Yes",
+    institution: "University of Florida",
+    phase: "Phase 1",
+    phaseClass: "phase1",
+    result: "Dogs: median survival 139 days (vs. 35–63 days historical). 3 human patients: immune signaling proteins increased within 6 hours.",
+    detail: "mRNA lipid particle approach; canine model followed by small human expansion.",
+    refs: [
+      {label:"PubMed / PMC11767857", href:"https://pmc.ncbi.nlm.nih.gov/articles/PMC11767857/"},
+      {label:"NCT04573140", href:"https://clinicaltrials.gov/study/NCT04573140"}
+    ]
+  },
+  {
+    cancer: "Head & Neck",
+    cancerNote: "HPV16+ HNSCC",
+    updated: "2026-05-22",
+    updatedLabel: "May 22, 2026",
+    vaccine: "BNT113",
+    personalized: "No",
+    institution: "BioNTech",
+    phase: "Phase 2/3",
+    phaseClass: "phase3",
+    result: "40% objective response rate (6 of 15 patients) in Phase 2 HPV16-positive cohort. FDA Fast Track designation.",
+    detail: "Off-the-shelf HPV16 E6/E7 mRNA; advancing in combined Phase 2/3 program.",
+    refs: [
+      {label:"CancerNetwork (Fast Track)", href:"https://www.cancernetwork.com/view/bnt113-granted-fast-track-designation-in-hpv16-positive-hnscc"},
+      {label:"NCT04534205", href:"https://clinicaltrials.gov/study/NCT04534205"}
+    ]
+  },
+  {
+    cancer: "Lung (NSCLC)",
+    cancerNote: "Advanced / post PD-1",
+    updated: "2026-04-14",
+    updatedLabel: "Apr 14, 2026",
+    vaccine: "BNT116",
+    personalized: "No",
+    institution: "BioNTech",
+    phase: "Phase 1",
+    phaseClass: "phase1",
+    result: "BNT116 + cemiplimab: 80% disease control rate vs. 54.8% with standard chemotherapy. Expansion in 2026 to combine with RET inhibitors.",
+    detail: "LuCa-MERIT-1 (fixed-antigen mRNA, 6 shared antigens) after progression on PD-1 inhibition.",
+    refs: [
+      {label:"ResearchGate (LuCa-MERIT-1)", href:"https://www.researchgate.net/publication/385580183_1486_Preliminary_results_from_LuCa-MERIT-1_a_phase_I_trial_evaluating_BNT116_a_fixed_antigen_mRNA_vaccine_plus_cemiplimab_in_advanced_non-small_cell_lung_cancer_after_progression_on_PD-1_inhibition"},
+      {label:"NCT05142189", href:"https://clinicaltrials.gov/study/NCT05142189"}
+    ]
+  },
+  {
+    cancer: "Melanoma",
+    cancerNote: "Adjuvant (Stage IIB–IV)",
+    updated: "2026-08-19",
+    updatedLabel: "Aug 19, 2026",
+    vaccine: "mRNA-4157 (V940)",
+    personalized: "Yes",
+    institution: "Moderna / Merck",
+    phase: "Phase 3",
+    phaseClass: "phase3",
+    result: "Phase 3 INTerpath-001 met primary (RFS) & key secondary (DMFS) endpoints with statistically significant improvement over pembrolizumab alone (Aug 2026). In Phase 2b 5-year follow-up, adjuvant mRNA-4157 + Pembrolizumab reduced recurrence/death risk by 49% and distant metastasis/death by 59%.",
+    detail: "First positive Phase 3 trial result for an individualized neoantigen mRNA cancer therapy. Global regulatory filings planned.",
+    refs: [
+      {label:"Merck (Phase 3 readout)", href:"https://www.merck.com/news/moderna-and-merck-announce-positive-topline-results-from-phase-3-interpath-001-trial/"},
+      {label:"NCT05933577", href:"https://clinicaltrials.gov/study/NCT05933577"},
+      {label:"NCT03897881", href:"https://clinicaltrials.gov/study/NCT03897881"}
+    ]
+  },
+  {
+    cancer: "Pancreatic",
+    cancerNote: "PDAC, resected",
+    updated: "2026-07-07",
+    updatedLabel: "Jul 7, 2026",
+    vaccine: "BNT122 / autogene cevumeran",
+    personalized: "Yes",
+    institution: "Memorial Sloan Kettering + BioNTech",
+    phase: "Phase 2",
+    phaseClass: "phase2",
+    result: "Phase 1: 50% responded (8/16); among responders, 87.5% survival at 6-year follow-up (7/8). Randomized Phase 2 recruiting.",
+    detail: "Individualized vaccine post-surgery; long-term responder follow-up reported by MSK.",
+    refs: [
+      {label:"MSKCC", href:"https://www.mskcc.org/news/can-mrna-vaccines-fight-pancreatic-cancer-msk-clinical-researchers-are-trying-find-out"},
+      {label:"NCT04161755", href:"https://clinicaltrials.gov/study/NCT04161755"},
+      {label:"NCT05968326", href:"https://clinicaltrials.gov/study/NCT05968326"}
+    ]
+  }
+];
+
+const PHASE_ORDER = { "Approved":4, "Phase 3":3, "Phase 2/3":3, "Phase 2b / 3":3, "Phase 2":2, "Phase 1":1 };
+function phaseRank(t){
+  if(t.phase==="Approved") return 4;
+  if(t.phase.includes("3")) return 3;
+  if(t.phase.includes("2")) return 2;
+  return 1;
+}
+
+const listEl = document.getElementById('list');
+const qEl = document.getElementById('q');
+const sortEl = document.getElementById('sort');
+const countEl = document.getElementById('count');
+const countNoteEl = document.getElementById('count-note');
+
+function getFilters(){
+  const phases = [...document.querySelectorAll('#phase-filters input:checked')].map(i=>i.value);
+  const persOnly = document.getElementById('pers-only')?.checked;
+  return {phases, persOnly, q: qEl.value.trim().toLowerCase(), sort: sortEl.value};
+}
+
+function matchesPhase(t, phases){
+  if(t.phase==="Approved") return phases.includes("Approved");
+  if(t.phase.includes("3")) return phases.includes("Phase 3");
+  if(t.phase.includes("2")) return phases.includes("Phase 2");
+  if(t.phase.includes("Phase 1")) return phases.includes("Phase 1");
+  return false;
+}
+
+function highlightResult(text){
+  // wrap key numbers
+  return text.replace(/(86%|10\/14|60–80%|100%|139 days|40%|6 of 15|80%|54\.8%|49%|59%|50%|8 of 16|87\.5%|7 of 8)/g, '<span class="hl">$1</span>');
+}
+
+function render(){
+  const {phases, persOnly, q, sort} = getFilters();
+  let filtered = TRIALS.filter(t=>{
+    if(!matchesPhase(t, phases)) return false;
+    if(persOnly && t.personalized !== 'Yes') return false;
+    if(q){
+      const hay = (t.cancer+" "+t.cancerNote+" "+t.vaccine+" "+t.institution+" "+t.phase+" "+t.result+" "+t.detail).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  filtered.sort((a,b)=>{
+    if(sort==="phase-desc") return phaseRank(b)-phaseRank(a) || b.updated.localeCompare(a.updated);
+    if(sort==="updated-desc") return b.updated.localeCompare(a.updated);
+    if(sort==="updated-asc") return a.updated.localeCompare(b.updated);
+    if(sort==="alpha") return a.cancer.localeCompare(b.cancer);
+    return 0;
+  });
+
+  countEl.textContent = filtered.length;
+  countNoteEl.textContent = filtered.length===TRIALS.length ? "all phases" : "matching filters";
+
+  if(filtered.length===0){
+    listEl.innerHTML = '<div class="empty">No trials match these filters. Try clearing search or checking more phases.</div>';
+    return;
+  }
+
+  listEl.innerHTML = filtered.map(t=>`
+    <article class="trial">
+      <div class="trial-main">
+        <div class="trial-head">
+          <h3 class="cancer">${t.cancer} <small>${t.cancerNote}</small></h3>
+          <div class="badges">
+            <span class="phase-dot ${t.phaseClass}"><i></i> ${t.phase}</span>
+            <span class="badge ${t.personalized==='Yes'?'personalized-yes':'personalized-no'}">${t.personalized==='Yes'?'Personalized':'Non-personalized'}</span>
+            ${t.vaccine!=="—"?`<span class="badge">${t.vaccine}</span>`:""}
+          </div>
+        </div>
+        <p class="result">${highlightResult(t.result)}</p>
+        <p style="font-size:13px; color:var(--muted); margin:0 0 6px">${t.detail}</p>
+        <dl class="meta-grid">
+          <div class="meta-item"><dt>Institution</dt><dd>${t.institution}</dd></div>
+          <div class="meta-item"><dt>Last updated</dt><dd>${t.updatedLabel}</dd></div>
+          <div class="meta-item"><dt>Vaccine ID</dt><dd>${t.vaccine}</dd></div>
+          <div class="meta-item"><dt>Personalized</dt><dd>${t.personalized}</dd></div>
+        </dl>
+        <div class="links">
+          ${t.refs.map(r=>`<a class="link-pill" href="${r.href}" target="_blank" rel="noopener">${r.label} ↗</a>`).join('')}
+        </div>
+      </div>
+      <div class="trial-aside">
+        <div>
+          <p class="aside-label">Trial snapshot</p>
+          <table class="mini-table" aria-label="Trial snapshot">
+            <tr><th>Phase</th><td><span class="phase-dot ${t.phaseClass}"><i></i> ${t.phase}</span></td></tr>
+            <tr><th>Updated</th><td>${t.updatedLabel}</td></tr>
+            <tr><th>Vaccine</th><td>${t.vaccine}</td></tr>
+            <tr><th>Setting</th><td>${t.cancerNote}</td></tr>
+          </table>
+        </div>
+        <div>
+          <p class="aside-label">Institution</p>
+          <p class="aside-value">${t.institution}</p>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+[qEl, sortEl].forEach(el=> el.addEventListener('input', render));
+document.querySelectorAll('#phase-filters input, #pers-only').forEach(el=> el.addEventListener('change', render));
+document.getElementById('clear').addEventListener('click', ()=>{
+  qEl.value=""; sortEl.value="phase-desc";
+  document.querySelectorAll('#phase-filters input').forEach(i=> i.checked=true);
+  const persOnlyEl = document.getElementById('pers-only');
+  if(persOnlyEl) persOnlyEl.checked = false;
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
