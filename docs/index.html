@@ -123,6 +123,8 @@
   .phase-dot.phase3 i, .badge.phase3 i{background:#ea580c}
   .phase-dot.approved, .badge.approved{background:#dcfce7; border-color:#86efac; color:#14532d}
   .phase-dot.approved i, .badge.approved i{background:#16a34a}
+  .phase-dot.discontinued, .badge.discontinued{background:#f5f5f4; border-color:#d6d3d1; color:#57534e}
+  .phase-dot.discontinued i, .badge.discontinued i{background:#78716c}
   /* layout */
   .layout{
     display:grid; grid-template-columns: 260px 1fr; gap:0;
@@ -245,7 +247,7 @@
       </div>
     </div>
     <div class="header-actions">
-      <span class="meta-pill">Updated Aug 2026 · 7 trials tracked</span>
+      <span class="meta-pill">Updated Sep 2026 · 8 trials tracked</span>
       <a class="btn" href="https://github.com/philfung/awesome-mrna-cancer-vaccines" target="_blank" rel="noopener">View on GitHub →</a>
     </div>
   </div>
@@ -279,7 +281,7 @@
         </div>
         <div class="stat">
           <p class="stat-label">Personalized</p>
-          <p class="stat-value">4 / 7</p>
+          <p class="stat-value">6 / 8</p>
           <p class="stat-note">Patient-specific neoantigen vaccines</p>
         </div>
       </div>
@@ -290,6 +292,7 @@
           <span class="phase-dot phase2"><i></i> Phase 2</span>
           <span class="phase-dot phase3"><i></i> Phase 3 / 2b</span>
           <span class="phase-dot approved"><i></i> Approved</span>
+          <span class="phase-dot discontinued"><i></i> Discontinued</span>
         </div>
       </div>
     </div>
@@ -336,7 +339,7 @@
 
   <main class="content">
     <div class="toolbar">
-      <div class="toolbar-left"><span id="count">7</span> trials · <span id="count-note">all phases</span></div>
+      <div class="toolbar-left"><span id="count">8</span> trials · <span id="count-note">all phases</span></div>
       <div class="toolbar-right">
         <button id="clear" class="btn btn-ghost" style="padding:7px 11px; font-size:12px">Clear filters</button>
       </div>
@@ -350,7 +353,7 @@
     <div>
       <h3>About this tracker</h3>
       <p>Curated from peer-reviewed articles, ClinicalTrials.gov entries, and institutional announcements. Every entry links to its primary reference — verify details there before citing.</p>
-      <p class="subtle" style="margin-top:10px">Last built from README data — August 2026 updates included. Data subject to change.</p>
+      <p class="subtle" style="margin-top:10px">Last built from README data — September 2026 updates included. Data subject to change.</p>
     </div>
     <div>
       <h3>Related</h3>
@@ -395,6 +398,22 @@ const TRIALS = [
     detail: "Regulatory approval followed Phase 1 trials; reported via national agency announcement.",
     refs: [
       {label:"PubMed / PMC12578114", href:"https://pmc.ncbi.nlm.nih.gov/articles/PMC12578114/"}
+    ]
+  },
+  {
+    cancer: "Colorectal",
+    cancerNote: "Autogene cevumeran",
+    updated: "2026-08-28",
+    updatedLabel: "Aug 28, 2026",
+    vaccine: "Autogene cevumeran (BNT122)",
+    personalized: "Yes",
+    institution: "BioNTech / Genentech (Roche)",
+    phase: "Phase 2 — discontinued",
+    phaseClass: "discontinued",
+    result: "Phase 2 trial discontinued (Aug 28, 2026) for lack of efficacy. BioNTech/Genentech continue evaluating the vaccine in pancreatic cancer.",
+    detail: "Colorectal study ended after interim analysis; pancreatic Phase 2 (IMcode003) proceeds.",
+    refs: [
+      {label:"Motley Fool (trial exit)", href:"https://www.fool.com/investing/2026/09/18/biontech-just-threw-in-the-towel-on-its-colorectal/"}
     ]
   },
   {
@@ -451,14 +470,14 @@ const TRIALS = [
   {
     cancer: "Melanoma",
     cancerNote: "Adjuvant (Stage IIB–IV)",
-    updated: "2026-08-19",
-    updatedLabel: "Aug 19, 2026",
-    vaccine: "mRNA-4157 (V940)",
+    updated: "2026-09-21",
+    updatedLabel: "Sep 21, 2026",
+    vaccine: "mRNA-4157 (V940) / intismeran",
     personalized: "Yes",
     institution: "Moderna / Merck",
     phase: "Phase 3",
     phaseClass: "phase3",
-    result: "Phase 3 INTerpath-001 met primary (RFS) & key secondary (DMFS) endpoints with statistically significant improvement over pembrolizumab alone (Aug 2026). In Phase 2b 5-year follow-up, adjuvant mRNA-4157 + Pembrolizumab reduced recurrence/death risk by 49% and distant metastasis/death by 59%.",
+    result: "Phase 3 INTerpath-001 met primary (RFS) & key secondary (DMFS) endpoints with statistically significant improvement over pembrolizumab alone (Aug 2026). In Phase 2b 5-year follow-up, adjuvant mRNA-4157 + Pembrolizumab reduced recurrence/death risk by 49% and distant metastasis/death by 59%. Detailed Phase 3 data (1,137 patients) accepted as late-breaking presentation at ESMO Presidential Symposium, Oct 24, 2026.",
     detail: "First positive Phase 3 trial result for an individualized neoantigen mRNA cancer therapy. Global regulatory filings planned.",
     refs: [
       {label:"Merck (Phase 3 readout)", href:"https://www.merck.com/news/moderna-and-merck-announce-positive-topline-results-from-phase-3-interpath-001-trial/"},
