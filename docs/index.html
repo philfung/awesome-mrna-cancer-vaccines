@@ -247,7 +247,7 @@
       </div>
     </div>
     <div class="header-actions">
-      <span class="meta-pill">Updated Sep 2026 · 8 trials tracked</span>
+      <span class="meta-pill">Updated Oct 2026 · 8 trials tracked</span>
       <a class="btn" href="https://github.com/philfung/awesome-mrna-cancer-vaccines" target="_blank" rel="noopener">View on GitHub →</a>
     </div>
   </div>
@@ -353,7 +353,7 @@
     <div>
       <h3>About this tracker</h3>
       <p>Curated from peer-reviewed articles, ClinicalTrials.gov entries, and institutional announcements. Every entry links to its primary reference — verify details there before citing.</p>
-      <p class="subtle" style="margin-top:10px">Last built from README data — September 2026 updates included. Data subject to change.</p>
+      <p class="subtle" style="margin-top:10px">Last built from README data — October 2026 updates included. Data subject to change.</p>
     </div>
     <div>
       <h3>Related</h3>
@@ -436,16 +436,17 @@ const TRIALS = [
   {
     cancer: "Head & Neck",
     cancerNote: "HPV16+ HNSCC",
-    updated: "2026-05-22",
-    updatedLabel: "May 22, 2026",
-    vaccine: "BNT113",
+    updated: "2026-10-13",
+    updatedLabel: "Oct 13, 2026",
+    vaccine: "BNT113 (tenumomeran / raplemomeran)",
     personalized: "No",
     institution: "BioNTech",
     phase: "Phase 2/3",
     phaseClass: "phase3",
-    result: "40% objective response rate (6 of 15 patients) in Phase 2 HPV16-positive cohort. FDA Fast Track designation.",
-    detail: "Off-the-shelf HPV16 E6/E7 mRNA; advancing in combined Phase 2/3 program.",
+    result: "BNT113 + pembrolizumab missed PFS, the first dual primary endpoint, vs pembrolizumab alone in 1L HPV16+ metastatic HNSCC (AHEAD-MERIT, Oct 13, 2026); trial continues to the OS second primary endpoint per IDMC. Earlier: 40% objective response rate (6 of 15 patients) in Phase 2; FDA Fast Track designation.",
+    detail: "Off-the-shelf HPV16 E6/E7 mRNA; PFS miss announced Oct 13, 2026, overall survival follow-up ongoing.",
     refs: [
+      {label:"TargetedOnc (PFS miss)", href:"https://www.targetedonc.com/view/bnt113-pembrolizumab-misses-pfs-hpv16-hnscc"},
       {label:"CancerNetwork (Fast Track)", href:"https://www.cancernetwork.com/view/bnt113-granted-fast-track-designation-in-hpv16-positive-hnscc"},
       {label:"NCT04534205", href:"https://clinicaltrials.gov/study/NCT04534205"}
     ]
@@ -470,17 +471,18 @@ const TRIALS = [
   {
     cancer: "Melanoma",
     cancerNote: "Adjuvant (Stage IIB–IV)",
-    updated: "2026-09-21",
-    updatedLabel: "Sep 21, 2026",
+    updated: "2026-10-24",
+    updatedLabel: "Oct 24, 2026",
     vaccine: "mRNA-4157 (V940) / intismeran",
     personalized: "Yes",
     institution: "Moderna / Merck",
     phase: "Phase 3",
     phaseClass: "phase3",
-    result: "Phase 3 INTerpath-001 met primary (RFS) & key secondary (DMFS) endpoints with statistically significant improvement over pembrolizumab alone (Aug 2026). In Phase 2b 5-year follow-up, adjuvant mRNA-4157 + Pembrolizumab reduced recurrence/death risk by 49% and distant metastasis/death by 59%. Detailed Phase 3 data (1,137 patients) accepted as late-breaking presentation at ESMO Presidential Symposium, Oct 24, 2026.",
+    result: "Phase 3 INTerpath-001 met primary (RFS, HR 0.58, p<0.001) & key secondary (DMFS, HR 0.62, p=0.002): intismeran + pembrolizumab cut recurrence/death risk by 42% and distant metastasis/death by 38% vs pembrolizumab alone (1,137 patients, median follow-up 24.6 mo; 2-yr RFS 82.2% vs 70.0%). Full data presented at ESMO Oct 24, 2026 (LBA1, Presidential Symposium) and published in NEJM; OS data immature. Phase 2b 5-year follow-up: recurrence/death -49%, distant metastasis/death -59%.",
     detail: "First positive Phase 3 trial result for an individualized neoantigen mRNA cancer therapy. Global regulatory filings planned.",
     refs: [
       {label:"Merck (Phase 3 readout)", href:"https://www.merck.com/news/moderna-and-merck-announce-positive-topline-results-from-phase-3-interpath-001-trial/"},
+      {label:"ESMO/NEJM recap", href:"https://kolpulse.com/kol-pulse-trial-profile-interpath001"},
       {label:"NCT05933577", href:"https://clinicaltrials.gov/study/NCT05933577"},
       {label:"NCT03897881", href:"https://clinicaltrials.gov/study/NCT03897881"}
     ]
@@ -535,7 +537,7 @@ function matchesPhase(t, phases){
 
 function highlightResult(text){
   // wrap key numbers
-  return text.replace(/(86%|10\/14|60–80%|100%|139 days|40%|6 of 15|80%|54\.8%|49%|59%|50%|8 of 16|87\.5%|7 of 8)/g, '<span class="hl">$1</span>');
+  return text.replace(/(86%|10\/14|60–80%|100%|139 days|40%|6 of 15|80%|54\.8%|49%|59%|50%|8 of 16|87\.5%|7 of 8|42%|38%|82\.2%|70\.0%)/g, '<span class="hl">$1</span>');
 }
 
 function render(){
